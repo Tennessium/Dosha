@@ -1,49 +1,16 @@
-PITCHES = ["до", "ре", "ми", "фа", "соль", "ля", "си"]
+class Point:
+    x = 0
+    y = 0
 
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
 
-class Note:
-    sound = ""
-    is_long = False
-    dick = {
-        "до": "до-о",
-        "ре": "ре-э",
-        "ми": "ми-и",
-        "фа": "фа-а",
-        "соль": "со-оль",
-        "ля": "ля-а",
-        "си": "си-и"
-    }
+    def get_x(self):
+        return self.x
 
-    def __init__(self, sound="до", is_long=False):
-        self.sound = sound
-        self.is_long = is_long
+    def get_y(self):
+        return self.y
 
-    def __str__(self):
-        if not self.is_long:
-            return self.sound
-        else:
-            return self.dick[self.sound]
-
-
-class LoudNote(Note):
-    def __str__(self):
-        return super().__str__().upper()
-
-
-class DefaultNote(Note):
-    def __init__(self, sound="до", is_long=False):
-        super().__init__(sound, is_long)
-
-    def __str__(self):
-        return super().__str__()
-
-
-class NoteWithOctave(Note):
-    octava = ""
-
-    def __init__(self, sound, octava="", is_long=False):
-        super().__init__(sound, is_long)
-        self.octava = octava
-
-    def __str__(self):
-        return super().__str__() + " (" + self.octava + ')'
+    def get_coords(self):
+        return (self.x, self.y)
