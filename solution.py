@@ -32,10 +32,8 @@ class ColoredPoint(Point):
         super().__init__(name, x, y)
 
     def __invert__(self):
-        return ColoredPoint(self.name, self.y, self.x, (255 - self.color[0], 255 - self.color[1], 255 - self.color[2]))
+        ncolor = (255 - self.color[0], 255 - self.color[1], 255 - self.color[2])
+        return ColoredPoint(self.name, self.y, self.x, ncolor)
 
     def get_color(self):
         return self.color
-
-    #def __str__(self):
-    #    return super().__str__() + " " + str(self.color)
