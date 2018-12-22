@@ -7,6 +7,8 @@ class BellTower:
 
     def append(self, x):
         self.kolokola.append(x)
+        for i in self.kolokola:
+            i.ding = True
 
     def sound(self):
         for i in self.kolokola:
@@ -15,6 +17,8 @@ class BellTower:
 
 
 class LittleBell:
+    ding = True
+    
     def __init__(self):
         pass
 
