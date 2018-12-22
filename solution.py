@@ -1,6 +1,15 @@
 class Note:
     sound = ""
     long = False
+    dick = {
+        "до": "до-о",
+        "ре": "ре-э",
+        "ми": "ми-и",
+        "фа": "фа-а",
+        "соль": "со-оль",
+        "ля": "ля-а",
+        "си": "си-и"
+    }
 
     def __init__(self, *args):
         self.sound = args[0]
@@ -13,4 +22,4 @@ class Note:
         if not self.long:
             return self.sound
         else:
-            return self.sound + "-" + self.sound[len(self.sound) - 1]
+            return self.dick[self.sound]
