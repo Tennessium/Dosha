@@ -50,6 +50,10 @@ class Bell:
             s += '; '
         for i in self.data:
             s += i + ', '
+        try:
+            s = s[:-2]
+        except Exception:
+            pass
         print(s)
 
 
