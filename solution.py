@@ -20,14 +20,14 @@ class Bell:
         self.kdata = {}
 
         for i in args:
-            if type(i) == type(str()):
+            if isinstance(i, str):
                 self.data.append(i)
-            elif type(i) == type({}):
+            elif isinstance(i, dict):
                 for j in i:
                     self.kdata[j] = i[j]
-            elif type(i) == type(()):
+            elif isinstance(i, tuple):
                 for j in i:
-                    if type(j) == type(str()):
+                    if isinstance(j, str):
                         self.data.append(j)
 
     def print_info(self):
