@@ -54,7 +54,10 @@ class Bell:
             s = s[:-2]
         except Exception:
             pass
-        print(s)
+        if s == "":
+            print('-')
+        else:
+            print(s)
 
 
 class LittleBell(Bell):
